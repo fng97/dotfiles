@@ -14,4 +14,6 @@ config.wsl_domains = {
 
 config.default_domain = "WSL:Ubuntu"
 
+config.window_decorations = "RESIZE"
+
 return config
