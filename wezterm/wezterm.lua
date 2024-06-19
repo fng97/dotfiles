@@ -2,8 +2,9 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font("JetBrains Mono")
-config.color_scheme = "Catppuccin Latte"
+config.color_scheme = "tokyonight"
 config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "RESIZE"
 
 config.wsl_domains = {
 	{
@@ -13,7 +14,5 @@ config.wsl_domains = {
 }
 
 config.default_domain = "WSL:Ubuntu"
-
-config.window_decorations = "RESIZE"
 
 return config
