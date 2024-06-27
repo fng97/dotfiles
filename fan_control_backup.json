@@ -1,0 +1,428 @@
+{
+  "__VERSION__": "194",
+  "Main": {
+    "Controls": [
+      {
+        "Calibration": [
+          [0, 457],
+          [10, 458],
+          [20, 460],
+          [30, 608],
+          [40, 776],
+          [50, 921],
+          [60, 1067],
+          [70, 1193],
+          [80, 1316],
+          [90, 1420],
+          [100, 1532]
+        ],
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/0",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 55,
+        "MinimumPercent": 0,
+        "Name": "CPU Fan",
+        "NickName": "CPU Fan",
+        "PairedFanSensor": {
+          "Identifier": "/lpc/nct6687d/fan/0",
+          "IsHidden": false,
+          "Name": "CPU Fan",
+          "NickName": "CPU Fan"
+        },
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": {
+          "CommandMode": 0,
+          "IdleFanSpeed": 40,
+          "IdleTemperature": 40.0,
+          "IsHidden": false,
+          "LoadFanSpeed": 60,
+          "LoadTemperature": 70.0,
+          "Name": "Idle - Load Trigger",
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/CPU/GPU Load",
+            "IsHidden": true,
+            "Name": "CPU/GPU Load",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Calibration": [],
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/1",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MinimumPercent": 0,
+        "Name": "Pump Fan",
+        "NickName": "Pump Fan",
+        "PairedFanSensor": null,
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Calibration": [
+          [30, 0],
+          [40, 525],
+          [50, 649],
+          [60, 772],
+          [70, 884],
+          [80, 1000],
+          [90, 1106],
+          [100, 1203]
+        ],
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/2",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 40,
+        "MinimumPercent": 0,
+        "Name": "System Fan #1",
+        "NickName": "System Fan #1",
+        "PairedFanSensor": {
+          "Identifier": "/lpc/nct6687d/fan/2",
+          "IsHidden": false,
+          "Name": "System Fan #1",
+          "NickName": "System Fan #1"
+        },
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 42,
+        "SelectedStop": 36
+      },
+      {
+        "Calibration": [
+          [30, 0],
+          [40, 832],
+          [50, 1038],
+          [60, 1243],
+          [70, 1422],
+          [80, 1608],
+          [90, 1780],
+          [100, 1938]
+        ],
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/3",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 40,
+        "MinimumPercent": 0,
+        "Name": "System Fan #2",
+        "NickName": "System Fan #2",
+        "PairedFanSensor": {
+          "Identifier": "/lpc/nct6687d/fan/3",
+          "IsHidden": false,
+          "Name": "System Fan #2",
+          "NickName": "System Fan #2"
+        },
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 48,
+        "SelectedStop": 36
+      },
+      {
+        "Calibration": [
+          [30, 0],
+          [40, 958],
+          [50, 1138],
+          [60, 1314],
+          [70, 1456],
+          [80, 1603],
+          [90, 1746],
+          [100, 1857]
+        ],
+        "Enable": true,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/4",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 40,
+        "MinimumPercent": 0,
+        "Name": "System Fan #3",
+        "NickName": "System Fan #3",
+        "PairedFanSensor": {
+          "Identifier": "/lpc/nct6687d/fan/4",
+          "IsHidden": false,
+          "Name": "System Fan #3",
+          "NickName": "System Fan #3"
+        },
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 42,
+        "SelectedStop": 36
+      },
+      {
+        "Calibration": [],
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/5",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MinimumPercent": 0,
+        "Name": "System Fan #4",
+        "NickName": "System Fan #4",
+        "PairedFanSensor": null,
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Calibration": [],
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/6",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MinimumPercent": 0,
+        "Name": "System Fan #5",
+        "NickName": "System Fan #5",
+        "PairedFanSensor": null,
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Calibration": [],
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "/lpc/nct6687d/control/7",
+        "IsHidden": true,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MinimumPercent": 0,
+        "Name": "System Fan #6",
+        "NickName": "System Fan #6",
+        "PairedFanSensor": null,
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      },
+      {
+        "Calibration": [
+          [0, 1100],
+          [10, 1101],
+          [20, 1102],
+          [30, 1520],
+          [40, 2013],
+          [50, 2510],
+          [60, 3004],
+          [70, 3502],
+          [80, 4000],
+          [90, 4498],
+          [100, 5006]
+        ],
+        "Enable": false,
+        "ForceApply": false,
+        "Identifier": "NVApiWrapper/0-GP102-A/control/0",
+        "IsHidden": false,
+        "ManualControl": false,
+        "ManualControlValue": 50,
+        "MinimumPercent": 0,
+        "Name": "Control 1 - NVIDIA GeForce GTX 1080 Ti",
+        "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti",
+        "PairedFanSensor": {
+          "Identifier": "NVApiWrapper/0-GP102-A/fan/0",
+          "IsHidden": false,
+          "Name": "Fan 1 - NVIDIA GeForce GTX 1080 Ti",
+          "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti"
+        },
+        "SelectedCommandStepDown": 8.0,
+        "SelectedCommandStepUp": 8.0,
+        "SelectedFanCurve": null,
+        "SelectedOffset": 0,
+        "SelectedStart": 0,
+        "SelectedStop": 0
+      }
+    ],
+    "CustomSensors": [
+      {
+        "Identifier": "Mix/CPU/GPU Load",
+        "IsHidden": true,
+        "Name": "CPU/GPU Load",
+        "SelectedMixFunction": 1,
+        "SelectedSensors": [
+          {
+            "Identifier": "/amdcpu/0/temperature/2",
+            "IsHidden": false,
+            "Name": "Core (Tctl/Tdie)",
+            "NickName": "Core (Tctl/Tdie)"
+          },
+          {
+            "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+            "IsHidden": false,
+            "Name": "GPU",
+            "NickName": "GPU"
+          }
+        ]
+      }
+    ],
+    "Fahrenheit": false,
+    "FanCurves": [
+      {
+        "CommandMode": 0,
+        "IdleFanSpeed": 40,
+        "IdleTemperature": 40.0,
+        "IsHidden": false,
+        "LoadFanSpeed": 60,
+        "LoadTemperature": 70.0,
+        "Name": "Idle - Load Trigger",
+        "SelectedResponseTime": 1,
+        "SelectedTempSource": {
+          "Identifier": "Mix/CPU/GPU Load",
+          "IsHidden": true,
+          "Name": "CPU/GPU Load",
+          "SelectedMixFunction": 1,
+          "SelectedSensors": [
+            {
+              "Identifier": "/amdcpu/0/temperature/2",
+              "IsHidden": false,
+              "Name": "Core (Tctl/Tdie)",
+              "NickName": "Core (Tctl/Tdie)"
+            },
+            {
+              "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+              "IsHidden": false,
+              "Name": "GPU",
+              "NickName": "GPU"
+            }
+          ]
+        }
+      }
+    ],
+    "FanSensors": [
+      {
+        "Identifier": "/lpc/nct6687d/fan/0",
+        "IsHidden": false,
+        "Name": "CPU Fan",
+        "NickName": "CPU Fan"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/1",
+        "IsHidden": false,
+        "Name": "Pump Fan",
+        "NickName": "Pump Fan"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/2",
+        "IsHidden": false,
+        "Name": "System Fan #1",
+        "NickName": "System Fan #1"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/3",
+        "IsHidden": false,
+        "Name": "System Fan #2",
+        "NickName": "System Fan #2"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/4",
+        "IsHidden": false,
+        "Name": "System Fan #3",
+        "NickName": "System Fan #3"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/5",
+        "IsHidden": false,
+        "Name": "System Fan #4",
+        "NickName": "System Fan #4"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/6",
+        "IsHidden": false,
+        "Name": "System Fan #5",
+        "NickName": "System Fan #5"
+      },
+      {
+        "Identifier": "/lpc/nct6687d/fan/7",
+        "IsHidden": false,
+        "Name": "System Fan #6",
+        "NickName": "System Fan #6"
+      },
+      {
+        "Identifier": "NVApiWrapper/0-GP102-A/fan/0",
+        "IsHidden": false,
+        "Name": "Fan 1 - NVIDIA GeForce GTX 1080 Ti",
+        "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti"
+      }
+    ],
+    "HideCalibration": false,
+    "HideFanSpeedCards": true,
+    "HorizontalUIOrientation": false,
+    "PrimaryColor": "#FF607D8B",
+    "SecondaryColor": "#FFC6FF00",
+    "SelectedTheme": "Inherit",
+    "ShowHiddenCards": false,
+    "SyncThemeWithWindows": true,
+    "SyncTrayIconColorWithWindows": true,
+    "TemperatureSensors": [],
+    "TrayIconColor": "#FFFFFFFF",
+    "TrayIcons": []
+  },
+  "Sensors": {
+    "DisabledPlugins": [],
+    "DisableStorageSensors": true,
+    "LibreHardwareMonitorSettings": {
+      "Controller": false,
+      "CPU": true,
+      "EmbeddedEC": true,
+      "GPU": true,
+      "InpOut": false,
+      "Memory": false,
+      "Motherboard": true,
+      "PSU": true,
+      "Storage": false,
+      "ZeroRPMOverride": true
+    },
+    "NvAPIWrapperSettings": {
+      "Enabled": true,
+      "ZeroRPMOverride": true
+    },
+    "SensorCount": 28
+  }
+}
+
