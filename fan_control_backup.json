@@ -1,20 +1,53 @@
 {
-  "__VERSION__": "194",
+  "__VERSION__": "198",
   "Main": {
     "Controls": [
       {
         "Calibration": [
-          [0, 457],
-          [10, 458],
-          [20, 460],
-          [30, 608],
-          [40, 776],
-          [50, 921],
-          [60, 1067],
-          [70, 1193],
-          [80, 1316],
-          [90, 1420],
-          [100, 1532]
+          [
+            0,
+            457
+          ],
+          [
+            10,
+            458
+          ],
+          [
+            20,
+            460
+          ],
+          [
+            30,
+            608
+          ],
+          [
+            40,
+            776
+          ],
+          [
+            50,
+            921
+          ],
+          [
+            60,
+            1067
+          ],
+          [
+            70,
+            1193
+          ],
+          [
+            80,
+            1316
+          ],
+          [
+            90,
+            1420
+          ],
+          [
+            100,
+            1532
+          ]
         ],
         "Enable": true,
         "ForceApply": false,
@@ -35,11 +68,11 @@
         "SelectedCommandStepUp": 8.0,
         "SelectedFanCurve": {
           "CommandMode": 0,
-          "IdleFanSpeed": 40,
-          "IdleTemperature": 40.0,
+          "IdleFanSpeed": 0,
+          "IdleTemperature": 50.0,
           "IsHidden": false,
-          "LoadFanSpeed": 60,
-          "LoadTemperature": 70.0,
+          "LoadFanSpeed": 40,
+          "LoadTemperature": 60.0,
           "Name": "Idle - Load Trigger",
           "SelectedResponseTime": 1,
           "SelectedTempSource": {
@@ -55,7 +88,7 @@
                 "NickName": "Core (Tctl/Tdie)"
               },
               {
-                "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+                "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
                 "IsHidden": false,
                 "Name": "GPU",
                 "NickName": "GPU"
@@ -88,14 +121,38 @@
       },
       {
         "Calibration": [
-          [30, 0],
-          [40, 525],
-          [50, 649],
-          [60, 772],
-          [70, 884],
-          [80, 1000],
-          [90, 1106],
-          [100, 1203]
+          [
+            30,
+            0
+          ],
+          [
+            40,
+            525
+          ],
+          [
+            50,
+            649
+          ],
+          [
+            60,
+            772
+          ],
+          [
+            70,
+            884
+          ],
+          [
+            80,
+            1000
+          ],
+          [
+            90,
+            1106
+          ],
+          [
+            100,
+            1203
+          ]
         ],
         "Enable": true,
         "ForceApply": false,
@@ -114,21 +171,74 @@
         },
         "SelectedCommandStepDown": 8.0,
         "SelectedCommandStepUp": 8.0,
-        "SelectedFanCurve": null,
+        "SelectedFanCurve": {
+          "CommandMode": 0,
+          "IdleFanSpeed": 0,
+          "IdleTemperature": 50.0,
+          "IsHidden": false,
+          "LoadFanSpeed": 40,
+          "LoadTemperature": 60.0,
+          "Name": "Idle - Load Trigger",
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/CPU/GPU Load",
+            "IsHidden": true,
+            "Name": "CPU/GPU Load",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
         "SelectedOffset": 0,
         "SelectedStart": 42,
         "SelectedStop": 36
       },
       {
         "Calibration": [
-          [30, 0],
-          [40, 832],
-          [50, 1038],
-          [60, 1243],
-          [70, 1422],
-          [80, 1608],
-          [90, 1780],
-          [100, 1938]
+          [
+            30,
+            0
+          ],
+          [
+            40,
+            832
+          ],
+          [
+            50,
+            1038
+          ],
+          [
+            60,
+            1243
+          ],
+          [
+            70,
+            1422
+          ],
+          [
+            80,
+            1608
+          ],
+          [
+            90,
+            1780
+          ],
+          [
+            100,
+            1938
+          ]
         ],
         "Enable": true,
         "ForceApply": false,
@@ -147,21 +257,74 @@
         },
         "SelectedCommandStepDown": 8.0,
         "SelectedCommandStepUp": 8.0,
-        "SelectedFanCurve": null,
+        "SelectedFanCurve": {
+          "CommandMode": 0,
+          "IdleFanSpeed": 0,
+          "IdleTemperature": 50.0,
+          "IsHidden": false,
+          "LoadFanSpeed": 40,
+          "LoadTemperature": 60.0,
+          "Name": "Idle - Load Trigger",
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/CPU/GPU Load",
+            "IsHidden": true,
+            "Name": "CPU/GPU Load",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
         "SelectedOffset": 0,
         "SelectedStart": 48,
         "SelectedStop": 36
       },
       {
         "Calibration": [
-          [30, 0],
-          [40, 958],
-          [50, 1138],
-          [60, 1314],
-          [70, 1456],
-          [80, 1603],
-          [90, 1746],
-          [100, 1857]
+          [
+            30,
+            0
+          ],
+          [
+            40,
+            958
+          ],
+          [
+            50,
+            1138
+          ],
+          [
+            60,
+            1314
+          ],
+          [
+            70,
+            1456
+          ],
+          [
+            80,
+            1603
+          ],
+          [
+            90,
+            1746
+          ],
+          [
+            100,
+            1857
+          ]
         ],
         "Enable": true,
         "ForceApply": false,
@@ -180,7 +343,36 @@
         },
         "SelectedCommandStepDown": 8.0,
         "SelectedCommandStepUp": 8.0,
-        "SelectedFanCurve": null,
+        "SelectedFanCurve": {
+          "CommandMode": 0,
+          "IdleFanSpeed": 0,
+          "IdleTemperature": 50.0,
+          "IsHidden": false,
+          "LoadFanSpeed": 40,
+          "LoadTemperature": 60.0,
+          "Name": "Idle - Load Trigger",
+          "SelectedResponseTime": 1,
+          "SelectedTempSource": {
+            "Identifier": "Mix/CPU/GPU Load",
+            "IsHidden": true,
+            "Name": "CPU/GPU Load",
+            "SelectedMixFunction": 1,
+            "SelectedSensors": [
+              {
+                "Identifier": "/amdcpu/0/temperature/2",
+                "IsHidden": false,
+                "Name": "Core (Tctl/Tdie)",
+                "NickName": "Core (Tctl/Tdie)"
+              },
+              {
+                "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
+                "IsHidden": false,
+                "Name": "GPU",
+                "NickName": "GPU"
+              }
+            ]
+          }
+        },
         "SelectedOffset": 0,
         "SelectedStart": 42,
         "SelectedStop": 36
@@ -243,34 +435,17 @@
         "SelectedStop": 0
       },
       {
-        "Calibration": [
-          [0, 1100],
-          [10, 1101],
-          [20, 1102],
-          [30, 1520],
-          [40, 2013],
-          [50, 2510],
-          [60, 3004],
-          [70, 3502],
-          [80, 4000],
-          [90, 4498],
-          [100, 5006]
-        ],
+        "Calibration": null,
         "Enable": false,
         "ForceApply": false,
-        "Identifier": "NVApiWrapper/0-GP102-A/control/0",
+        "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/control",
         "IsHidden": false,
         "ManualControl": false,
         "ManualControlValue": 50,
         "MinimumPercent": 0,
-        "Name": "Control 1 - NVIDIA GeForce GTX 1080 Ti",
-        "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti",
-        "PairedFanSensor": {
-          "Identifier": "NVApiWrapper/0-GP102-A/fan/0",
-          "IsHidden": false,
-          "Name": "Fan 1 - NVIDIA GeForce GTX 1080 Ti",
-          "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti"
-        },
+        "Name": "Control 1 - AMD Radeon RX 7900 GRE",
+        "NickName": "Control 1 - AMD Radeon RX 7900 GRE",
+        "PairedFanSensor": null,
         "SelectedCommandStepDown": 8.0,
         "SelectedCommandStepUp": 8.0,
         "SelectedFanCurve": null,
@@ -293,7 +468,7 @@
             "NickName": "Core (Tctl/Tdie)"
           },
           {
-            "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+            "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
             "IsHidden": false,
             "Name": "GPU",
             "NickName": "GPU"
@@ -305,11 +480,11 @@
     "FanCurves": [
       {
         "CommandMode": 0,
-        "IdleFanSpeed": 40,
-        "IdleTemperature": 40.0,
+        "IdleFanSpeed": 0,
+        "IdleTemperature": 50.0,
         "IsHidden": false,
-        "LoadFanSpeed": 60,
-        "LoadTemperature": 70.0,
+        "LoadFanSpeed": 40,
+        "LoadTemperature": 60.0,
         "Name": "Idle - Load Trigger",
         "SelectedResponseTime": 1,
         "SelectedTempSource": {
@@ -325,7 +500,7 @@
               "NickName": "Core (Tctl/Tdie)"
             },
             {
-              "Identifier": "NVApiWrapper/0-GP102-A/sensor/0",
+              "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/temp/GPU",
               "IsHidden": false,
               "Name": "GPU",
               "NickName": "GPU"
@@ -384,10 +559,10 @@
         "NickName": "System Fan #6"
       },
       {
-        "Identifier": "NVApiWrapper/0-GP102-A/fan/0",
+        "Identifier": "ADLX/AMD Radeon RX 7900 GRE/11520/fan",
         "IsHidden": false,
-        "Name": "Fan 1 - NVIDIA GeForce GTX 1080 Ti",
-        "NickName": "Control 1 - NVIDIA GeForce GTX 1080 Ti"
+        "Name": "Fan 1 - AMD Radeon RX 7900 GRE",
+        "NickName": "Fan 1 - AMD Radeon RX 7900 GRE"
       }
     ],
     "HideCalibration": false,
@@ -395,15 +570,18 @@
     "HorizontalUIOrientation": false,
     "PrimaryColor": "#FF607D8B",
     "SecondaryColor": "#FFC6FF00",
-    "SelectedTheme": "Inherit",
-    "ShowHiddenCards": false,
+    "SelectedTheme": "",
+    "ShowHiddenCards": true,
     "SyncThemeWithWindows": true,
     "SyncTrayIconColorWithWindows": true,
     "TemperatureSensors": [],
-    "TrayIconColor": "#FFFFFFFF",
+    "TrayIconColor": null,
     "TrayIcons": []
   },
   "Sensors": {
+    "AdlxWrapperSettings": {
+      "Enabled": true
+    },
     "DisabledPlugins": [],
     "DisableStorageSensors": true,
     "LibreHardwareMonitorSettings": {
@@ -422,7 +600,6 @@
       "Enabled": true,
       "ZeroRPMOverride": true
     },
-    "SensorCount": 28
+    "SensorCount": 29
   }
 }
-
