@@ -2,16 +2,12 @@ brew "fish"
 brew "git"
 brew "direnv"
 brew "tlrc"
-brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "lazygit"
-
-# nvim: telescope dependencies
-brew "fd"
-brew "ripgrep"
-
-# nvim: global formatters (rest provided by dev shells)
-brew "nixfmt"
-brew "prettier"
-
-# GUIs
+brew "neovim", args: ["HEAD"]  # until 0.12 released
+brew "fd"        # <- telescope <- nvim
+brew "ripgrep"   # <- telescope <- nvim
+brew "nixfmt"    # <- conform <- nvim
+brew "prettier"  # <- conform <- nvim
 cask "wezterm"
+cask "signal"
+cask "firefox"
