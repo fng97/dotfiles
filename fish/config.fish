@@ -1,6 +1,8 @@
 set fish_greeting
 
-eval (/opt/homebrew/bin/brew shellenv)
+if test (uname) = "Darwin"
+  eval (/opt/homebrew/bin/brew shellenv)
+end
 
 set -x EDITOR nvim
 set -x VISUAL nvim
