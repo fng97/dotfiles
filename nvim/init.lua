@@ -8,6 +8,7 @@ vim.pack.add({
 	"https://github.com/f-person/auto-dark-mode.nvim",
 	"https://github.com/Mofiqul/vscode.nvim", -- theme
 	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/nvim-lualine/lualine.nvim",
 })
 
