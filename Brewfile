@@ -11,3 +11,4 @@ brew "prettier"  # <- conform <- nvim
 cask "wezterm"
 cask "signal"
 cask "firefox"
+brew "git-crypt"
