@@ -1,6 +1,7 @@
 -- PLUGINS
 
 vim.pack.add({
+	"https://github.com/nvim-treesitter/nvim-treesitter",
 	"https://github.com/nvim-telescope/telescope.nvim",
 	"https://github.com/nvim-telescope/telescope-file-browser.nvim",
 	"https://github.com/nvim-lua/plenary.nvim", -- telescope dependency
@@ -17,6 +18,26 @@ require("telescope").load_extension("file_browser")
 require("gitsigns").setup({})
 require("auto-dark-mode").setup({})
 require("vscode").setup({})
+
+require("nvim-treesitter.configs").setup({
+	ensure_installed = {
+		"asm",
+		"bash",
+		"c",
+		"cmake",
+		"cpp",
+		"dockerfile",
+		"json",
+		"lua",
+		"markdown",
+		"markdown_inline",
+		"nix",
+		"python",
+		"rust",
+		"zig",
+	},
+	highlight = { enable = true },
+})
 
 require("lualine").setup({
 	options = { globalstatus = true },
