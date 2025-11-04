@@ -3,7 +3,7 @@ local w = require("wezterm")
 local config = w.config_builder()
 
 config.font = w.font("JetBrains Mono")
-config.font_size = 20
+config.font_size = 16
 config.window_decorations = "INTEGRATED_BUTTONS"
 
 -- Switch between light and dark themes based on system theme.
