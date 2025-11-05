@@ -192,6 +192,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent Left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent Right" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up and center" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down and center" })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Go to older cursor position and center" })
+vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Go to newer cursor position and center" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- navigation
