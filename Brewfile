@@ -15,5 +15,6 @@ brew "git-crypt"
 brew "go"
 go "tailscale.com/cmd/tailscale"
 go "tailscale.com/cmd/tailscaled"
-tap "anyzig/tap"
-brew "anyzig"
+# Build and install from source until anyzls included
+# tap "anyzig/tap"
+# brew "anyzig"
