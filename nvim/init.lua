@@ -19,7 +19,7 @@ require("gitsigns").setup({})
 require("auto-dark-mode").setup({})
 require("vscode").setup({})
 
-require("nvim-treesitter.configs").setup({
+require("nvim-treesitter").setup({
 	ensure_installed = {
 		"asm",
 		"bash",
