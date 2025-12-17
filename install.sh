@@ -14,7 +14,7 @@ ln -sf "$PWD/gitignore" "$HOME/.gitignore"
 
 # On Windows, symlinking wouldn't work because Wezterm can't access the WSL filesystem. Just
 # overwrite the Windows home config each time.
-if grep --quiet WSL2 /proc/version; then
+if uname -r | grep --quiet WSL2; then
   # See https://superuser.com/a/1546688 for enabling $USERPROFILE.
   rsync --recursive --delete "$PWD/wezterm" "$USERPROFILE/.config"
 fi

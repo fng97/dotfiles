@@ -9,7 +9,7 @@ if test (uname) = "Darwin"
   eval (/opt/homebrew/bin/brew shellenv)
 end
 
-if grep --quiet WSL2 /proc/version
+if uname -r | grep --quiet WSL2
   set --export BROWSER explorer.exe
 end
 
