@@ -271,6 +271,15 @@ vim.keymap.set("n", "<leader>dd", '"+dd', { desc = "Delete line to system clipbo
 vim.keymap.set("v", "<leader>y", '"+y', { desc = "Yank selection to system clipboard" })
 vim.keymap.set("v", "<leader>d", '"+d', { desc = "Delete selection to system clipboard" })
 vim.keymap.set("v", "<leader>p", '"+p', { desc = "Paste to selection from system clipboard" })
+vim.keymap.set("n", "<leader>yr", function()
+	vim.fn.setreg("+", vim.fn.expand("%"))
+end, { desc = "Yank relative flie path to system clipboard" })
+vim.keymap.set("n", "<leader>yf", function()
+	vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Yank full file path to system clipboard" })
+vim.keymap.set("n", "<leader>yn", function()
+	vim.fn.setreg("+", vim.fn.expand("%:t"))
+end, { desc = "Yank file name to system clipboard" })
 
 -- IDE goodies
 
