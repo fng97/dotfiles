@@ -1,17 +1,74 @@
+-- BOOTSTRAP LAZY PACKAGE MANAGER
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+	local out = vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"--branch=stable",
+		lazyrepo,
+		lazypath,
+	})
+	if vim.v.shell_error ~= 0 then
+		vim.api.nvim_echo({
+			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+			{ out, "WarningMsg" },
+			{ "\nPress any key to exit..." },
+		}, true, {})
+		vim.fn.getchar()
+		os.exit(1)
+	end
+end
+vim.opt.rtp:prepend(lazypath)
+
+-- OPTIONS
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = " "
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 3 -- pad lines around cursor
+vim.opt.undofile = true -- persist undo history
+vim.opt.cmdheight = 0 -- hide command line unless active
+vim.opt.confirm = true -- don't fail silently
+vim.opt.ignorecase = true -- ignore case when searching...
+vim.opt.smartcase = true -- unless uppercase used in search
+vim.opt.textwidth = 100 -- break lines at 100
+vim.opt.tabstop = 2 -- a tab character is displayed as 2 spaces
+vim.opt.softtabstop = 2 -- pressing tab inserts 2 spaces
+vim.opt.shiftwidth = 2 -- indentation uses 2 spaces
+vim.opt.expandtab = true -- convert tabs to spaces
+vim.opt.smartindent = true -- automatically indent new lines
+vim.opt.breakindent = true -- start with tab in case of line wrap
+vim.opt.splitright = true -- by default open splits to the right
+
 -- PLUGINS
 
-vim.pack.add({
-	"https://github.com/nvim-treesitter/nvim-treesitter",
-	"https://github.com/nvim-telescope/telescope.nvim",
-	"https://github.com/nvim-telescope/telescope-file-browser.nvim",
-	"https://github.com/nvim-lua/plenary.nvim", -- telescope dependency
-	"https://github.com/lewis6991/gitsigns.nvim",
-	"https://github.com/f-person/auto-dark-mode.nvim",
-	"https://github.com/Mofiqul/vscode.nvim", -- theme
-	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/nvim-lualine/lualine.nvim",
+require("lazy").setup({
+	spec = {
+		{
+			"nvim-treesitter/nvim-treesitter",
+			build = ":TSUpdate",
+			commit = "42fc28ba918343ebfd5565147a42a26580579482",
+		},
+		{
+			"nvim-telescope/telescope.nvim",
+			dependencies = { "nvim-lua/plenary.nvim" },
+		},
+		"nvim-telescope/telescope-file-browser.nvim",
+		"lewis6991/gitsigns.nvim",
+		"f-person/auto-dark-mode.nvim",
+		"Mofiqul/vscode.nvim",
+		"stevearc/conform.nvim",
+		"neovim/nvim-lspconfig",
+		"nvim-lualine/lualine.nvim",
+	},
+	install = { colorscheme = { "vscode" } },
 })
+
+vim.cmd.colorscheme("vscode")
 
 require("telescope").setup({})
 require("telescope").load_extension("file_browser")
@@ -19,7 +76,7 @@ require("gitsigns").setup({})
 require("auto-dark-mode").setup({})
 require("vscode").setup({})
 
-require("nvim-treesitter").setup({
+require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"asm",
 		"bash",
@@ -64,28 +121,6 @@ require("conform").setup({
 		css = { "prettier" },
 	},
 })
-
--- OPTIONS
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 3 -- pad lines around cursor
-vim.opt.undofile = true -- persist undo history
-vim.opt.cmdheight = 0 -- hide command line unless active
-vim.opt.confirm = true -- don't fail silently
-vim.opt.ignorecase = true -- ignore case when searching...
-vim.opt.smartcase = true -- unless uppercase used in search
-vim.opt.textwidth = 100 -- break lines at 100
-vim.opt.tabstop = 2 -- a tab character is displayed as 2 spaces
-vim.opt.softtabstop = 2 -- pressing tab inserts 2 spaces
-vim.opt.shiftwidth = 2 -- indentation uses 2 spaces
-vim.opt.expandtab = true -- convert tabs to spaces
-vim.opt.smartindent = true -- automatically indent new lines
-vim.opt.breakindent = true -- start with tab in case of line wrap
-vim.opt.splitright = true -- by default open splits to the right
-vim.cmd.colorscheme("vscode")
 
 -- AUTOCOMMANDS
 
