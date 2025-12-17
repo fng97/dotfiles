@@ -5,7 +5,7 @@ brew "lazygit"
 brew "git-crypt"
 tap "anyzig/tap"
 brew "anyzig"
-brew "neovim"
+brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "fd"        # <- telescope <- nvim
 brew "ripgrep"   # <- telescope <- nvim
 brew "nixfmt"    # <- conform <- nvim
