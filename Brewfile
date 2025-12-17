@@ -5,6 +5,9 @@ brew "lazygit"
 brew "git-crypt"
 tap "anyzig/tap"
 brew "anyzig"
+brew "python-lsp-server"
+brew "ruff"
+
 brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "fd"        # <- telescope <- nvim
 brew "ripgrep"   # <- telescope <- nvim
