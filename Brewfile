@@ -7,6 +7,8 @@ tap "anyzig/tap"
 brew "anyzig"
 brew "python-lsp-server"
 brew "ruff"
+brew "jq"
+brew "git-lfs"
 
 brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "fd"        # <- telescope <- nvim
