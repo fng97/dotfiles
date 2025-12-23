@@ -6,15 +6,16 @@ brew "git-crypt"
 tap "anyzig/tap"
 brew "anyzig"
 brew "python-lsp-server"
-brew "ruff"
-brew "jq"
 brew "git-lfs"
-
+brew "llvm"
 brew "neovim", args: ["HEAD"]  # until 0.12 released
-brew "fd"        # <- telescope <- nvim
-brew "ripgrep"   # <- telescope <- nvim
-brew "nixfmt"    # <- conform <- nvim
-brew "prettier"  # <- conform <- nvim
+brew "luarocks"
+brew "fd"
+brew "ripgrep"
+brew "nixfmt"
+brew "prettier"
+brew "jq"
+brew "ruff"
 
 if OS.mac?
   brew "fish"
