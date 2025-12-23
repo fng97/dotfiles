@@ -83,6 +83,7 @@ require("nvim-treesitter.configs").setup({
 		"c",
 		"cmake",
 		"cpp",
+		"diff",
 		"dockerfile",
 		"json",
 		"lua",
@@ -94,7 +95,8 @@ require("nvim-treesitter.configs").setup({
 		"zig",
 	},
 	auto_install = true,
-	highlight = { enable = true },
+	highlight = { enable = true, additional_vim_regex_highlighting = { "python" } },
+	indent = { enable = true, disable = { "python" } },
 })
 
 require("lualine").setup({
