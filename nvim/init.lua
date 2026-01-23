@@ -2,8 +2,6 @@
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.background = "light" -- by default use light theme
-vim.cmd.colorscheme("vim") -- classic
 vim.opt.number = true -- enable line numbers
 vim.opt.relativenumber = true -- make them relative
 vim.opt.scrolloff = 3 -- pad lines around cursor vertically
@@ -22,19 +20,30 @@ vim.opt.smartindent = true -- automatically indent new lines
 vim.opt.autoindent = true -- copy indent from current line
 vim.opt.breakindent = true -- start with tab in case of line wrap
 
--- Remove statusline background.
-vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
-
 -- PLUGINS
 
+-- NOTE: Pinning version with `vim.pack` wasn't working for me. Just forked everything instead to
+-- make sure versions are pinned.
 vim.pack.add({
-	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/ibhagwan/fzf-lua",
+	"https://github.com/fng97/conform.nvim", -- auto-formatting
+	"https://github.com/fng97/fzf-lua", -- fuzzy fd/ripgrep
+	"https://github.com/fng97/nvim-treesitter", -- better syntax highlighting
+	"https://github.com/fng97/vscode.nvim", -- theme
 })
+
+vim.o.background = "light"
+require("vscode").setup({})
+vim.cmd.colorscheme("vscode")
 
 require("fzf-lua").setup({})
 
+require("nvim-treesitter.configs").setup({
+	auto_install = true, -- just install as needed
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+})
 require("conform").setup({
 	format_on_save = { lsp_format = "never" },
 	formatters_by_ft = {
@@ -94,7 +103,7 @@ end, { desc = "Toggle background light/dark" })
 -- Search
 local fzf = require("fzf-lua")
 vim.keymap.set("n", "<leader>/", fzf.live_grep, { desc = "Grep files" })
-vim.keymap.set("n", "<leader><leader>", fzf.files, { desc = "Search files" })
+vim.keymap.set("n", "<leader><leader>", fzf.git_files, { desc = "Search files" })
 vim.keymap.set("n", "<leader>sf", function()
 	fzf.files({ fd_opts = "--type f --unrestricted --follow --exclude .git" })
 end, { desc = "Search all files" })
