@@ -1,35 +1,14 @@
--- BOOTSTRAP LAZY PACKAGE MANAGER
-
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not (vim.uv or vim.loop).fs_stat(lazypath) then
-	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
-	local out = vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"--branch=stable",
-		lazyrepo,
-		lazypath,
-	})
-	if vim.v.shell_error ~= 0 then
-		vim.api.nvim_echo({
-			{ "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-			{ out, "WarningMsg" },
-			{ "\nPress any key to exit..." },
-		}, true, {})
-		vim.fn.getchar()
-		os.exit(1)
-	end
-end
-vim.opt.rtp:prepend(lazypath)
-
 -- OPTIONS
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 3 -- pad lines around cursor
+vim.o.laststatus = 0 -- remove status bar
+vim.o.background = "light" -- by default use light theme
+vim.cmd.colorscheme("vim") -- classic
+vim.opt.number = true -- enable line numbers
+vim.opt.relativenumber = true -- make them relative
+vim.opt.scrolloff = 3 -- pad lines around cursor vertically
+vim.opt.sidescrolloff = 3 -- pad lines around cursor horizontally
 vim.opt.undofile = true -- persist undo history
 vim.opt.cmdheight = 0 -- hide command line unless active
 vim.opt.confirm = true -- don't fail silently
@@ -41,69 +20,18 @@ vim.opt.softtabstop = 2 -- pressing tab inserts 2 spaces
 vim.opt.shiftwidth = 2 -- indentation uses 2 spaces
 vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.smartindent = true -- automatically indent new lines
+vim.opt.autoindent = true -- copy indent from current line
 vim.opt.breakindent = true -- start with tab in case of line wrap
-vim.opt.splitright = true -- by default open splits to the right
 
 -- PLUGINS
 
-require("lazy").setup({
-	spec = {
-		{
-			"nvim-treesitter/nvim-treesitter",
-			build = ":TSUpdate",
-			commit = "42fc28ba918343ebfd5565147a42a26580579482",
-		},
-		{
-			"nvim-telescope/telescope.nvim",
-			dependencies = { "nvim-lua/plenary.nvim" },
-		},
-		"nvim-telescope/telescope-file-browser.nvim",
-		"lewis6991/gitsigns.nvim",
-		"f-person/auto-dark-mode.nvim",
-		"Mofiqul/vscode.nvim",
-		"stevearc/conform.nvim",
-		"neovim/nvim-lspconfig",
-		"nvim-lualine/lualine.nvim",
-	},
-	install = { colorscheme = { "vscode" } },
+vim.pack.add({
+	"https://github.com/nvim-telescope/telescope.nvim",
+	"https://github.com/nvim-lua/plenary.nvim", -- telescope dependency
+	"https://github.com/stevearc/conform.nvim",
 })
-
-vim.cmd.colorscheme("vscode")
 
 require("telescope").setup({})
-require("telescope").load_extension("file_browser")
-require("gitsigns").setup({})
-require("auto-dark-mode").setup({})
-require("vscode").setup({})
-
-require("nvim-treesitter.configs").setup({
-	ensure_installed = {
-		"asm",
-		"bash",
-		"c",
-		"cmake",
-		"cpp",
-		"diff",
-		"dockerfile",
-		"json",
-		"lua",
-		"markdown",
-		"markdown_inline",
-		"nix",
-		"python",
-		"rust",
-		"zig",
-	},
-	auto_install = true,
-	highlight = { enable = true, additional_vim_regex_highlighting = { "python" } },
-	indent = { enable = true, disable = { "python" } },
-})
-
-require("lualine").setup({
-	options = { globalstatus = true },
-	sections = { lualine_x = { "searchcount" } },
-})
-
 require("conform").setup({
 	format_on_save = { lsp_format = "never" },
 	formatters_by_ft = {
@@ -152,108 +80,54 @@ vim.api.nvim_create_autocmd("FileType", {
 	desc = "Enable spell check in Markdown",
 })
 
--- This provides "hot reloads" when I'm working on a blog post. It's only enabled when working in
--- the "website" repo on macOS.
-if vim.fn.getcwd():match("website$") and vim.fn.has("mac") == 1 then
-	vim.api.nvim_create_autocmd("BufWritePost", {
-		pattern = "content/*.md", -- only when editing pages
-		callback = function()
-			local html_path = "zig-out/" .. vim.fn.expand("%:t:r") .. ".html"
-			vim.system(
-				{ "zig", "build", "reload", "--", html_path },
-				{ text = true },
-				function(result)
-					if result.code == 0 then
-						print("✅ Web page hot-reloaded")
-					else
-						print("❌ Hot reload failed\n" .. (result.stderr or ""))
-					end
-				end
-			)
-		end,
-	})
-end
-
--- LSP
-
-vim.lsp.enable({
-	"clangd",
-	"rust_analyzer",
-	"pylsp",
-	"zls",
-})
-
 -- KEY MAPPINGS
 
--- search
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left (keep highlight)" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right (keep highlight)" })
 
-vim.keymap.set("n", "<leader>/", require("telescope.builtin").live_grep, { desc = "Grep files" })
-
+-- Search
+vim.keymap.set(
+	"n",
+	"<leader>/",
+	require("telescope.builtin").live_grep,
+	{ desc = "Grep all files" }
+)
 vim.keymap.set(
 	"n",
 	"<leader><leader>",
 	require("telescope.builtin").find_files,
 	{ desc = "Search files" }
 )
-
-vim.keymap.set(
-	"n",
-	"<leader>sh",
-	require("telescope.builtin").help_tags,
-	{ desc = "[S]earch [H]elp" }
-)
-
-vim.keymap.set(
-	"n",
-	"<leader>sk",
-	require("telescope.builtin").keymaps,
-	{ desc = "[S]earch [K]eymaps" }
-)
-
+vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Search help" })
+vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "Search keymap" })
 vim.keymap.set("n", "<leader>sf", function()
 	require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
-end, { desc = "[S]earch [F]iles (including hidden/ignored)" })
-
-vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", {
-	desc = "Go down a line (works on wrapped lines)",
-	expr = true,
-	silent = true,
-})
-
-vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", {
-	desc = "Go up a line (works on wrapped lines)",
-	expr = true,
-	silent = true,
-})
-
-vim.keymap.set("v", "<", "<gv", { desc = "Indent Left" })
-vim.keymap.set("v", ">", ">gv", { desc = "Indent Right" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up and center" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down and center" })
-vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Go to older cursor position and center" })
-vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Go to newer cursor position and center" })
+end, { desc = "Search files (including hidden/ignored)" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
--- navigation
-
+-- Navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
+vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Open file explorer" })
+vim.keymap.set("n", "n", "nzz", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "N", "Nzz", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up (centered)" })
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down (centered)" })
+vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Go to older cursor position (centered)" })
+vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Go to newer cursor position (centered)" })
 
--- window management
+-- Window Management
+vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split horizontally", remap = true })
+vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split vertically", remap = true })
+vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "Delete current window", remap = true })
 
-vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
-vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split Window Right", remap = true })
-vim.keymap.set("n", "<leader>wd", "<C-W>c", { desc = "[D]elete [W]indow", remap = true })
-
--- buffer management
-
-vim.keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous Buffer" })
-vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "[N]ew [B]uffer" })
-vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "[D]elete [B]uffer" })
-
+-- Buffer Management
+vim.keymap.set("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Previous buffer" })
+vim.keymap.set("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>enew<CR>", { desc = "New buffer" })
+vim.keymap.set("n", "<leader>bd", "<cmd>bd<CR>", { desc = "Delete current buffer" })
 vim.keymap.set("n", "<leader>bo", function()
 	local current = vim.api.nvim_get_current_buf()
 	for _, buf in ipairs(vim.api.nvim_list_bufs()) do
@@ -261,10 +135,9 @@ vim.keymap.set("n", "<leader>bo", function()
 			vim.api.nvim_buf_delete(buf, { force = true })
 		end
 	end
-end, { desc = "Delete [O]ther [B]uffers" })
+end, { desc = "Delete other buffers" })
 
--- clipboard
-
+-- Clipboard
 vim.keymap.set("n", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
 vim.keymap.set("n", "<leader>d", '"+d', { desc = "Delete to system clipboard" })
 vim.keymap.set("n", "<leader>p", '"+p', { desc = "Paste from system clipboard after cursor" })
@@ -275,33 +148,10 @@ vim.keymap.set("v", "<leader>d", '"+d', { desc = "Delete selection to system cli
 vim.keymap.set("v", "<leader>p", '"+p', { desc = "Paste to selection from system clipboard" })
 vim.keymap.set("n", "<leader>yr", function()
 	vim.fn.setreg("+", vim.fn.expand("%"))
-end, { desc = "Yank relative flie path to system clipboard" })
+end, { desc = "Yank relative file path to system clipboard" })
 vim.keymap.set("n", "<leader>yf", function()
 	vim.fn.setreg("+", vim.fn.expand("%:p"))
 end, { desc = "Yank full file path to system clipboard" })
 vim.keymap.set("n", "<leader>yn", function()
 	vim.fn.setreg("+", vim.fn.expand("%:t"))
 end, { desc = "Yank file name to system clipboard" })
-
--- IDE goodies
-
-vim.keymap.set(
-	"n",
-	"gd",
-	require("telescope.builtin").lsp_definitions,
-	{ desc = "[G]oto [D]efinition" }
-)
-
-vim.keymap.set(
-	"n",
-	"gD",
-	"<cmd>vsplit | lua vim.lsp.buf.definition()<CR>",
-	{ desc = "[G]oto [D]efinition in right split" }
-)
-
-vim.keymap.set("n", "<leader>gb", require("gitsigns").blame_line, { desc = "[G]it [B]lame" })
-vim.keymap.set("n", "<leader>gB", require("gitsigns").blame, { desc = "[G]it [B]lame (window)" })
-
-vim.keymap.set("n", "<leader>e", function()
-	require("telescope").extensions.file_browser.file_browser({ path = vim.fn.expand("%:p:h") })
-end, { desc = "UI: Toggle file [E]xplorer tree" })
