@@ -3,12 +3,14 @@ brew "direnv"
 brew "tlrc"
 brew "lazygit"
 brew "git-crypt"
-brew "python-lsp-server"
 brew "git-lfs"
 brew "llvm"
+
+# Neovim
 brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "luarocks"
 brew "fd"
+brew "fzf"
 brew "ripgrep"
 brew "nixfmt"
 brew "prettier"

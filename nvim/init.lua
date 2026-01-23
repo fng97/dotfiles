@@ -26,12 +26,12 @@ vim.opt.breakindent = true -- start with tab in case of line wrap
 -- PLUGINS
 
 vim.pack.add({
-	"https://github.com/nvim-telescope/telescope.nvim",
-	"https://github.com/nvim-lua/plenary.nvim", -- telescope dependency
 	"https://github.com/stevearc/conform.nvim",
+	"https://github.com/ibhagwan/fzf-lua",
 })
 
-require("telescope").setup({})
+require("fzf-lua").setup({})
+
 require("conform").setup({
 	format_on_save = { lsp_format = "never" },
 	formatters_by_ft = {
@@ -86,23 +86,10 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left (keep highlight)" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right (keep highlight)" })
 
 -- Search
-vim.keymap.set(
-	"n",
-	"<leader>/",
-	require("telescope.builtin").live_grep,
-	{ desc = "Grep all files" }
-)
-vim.keymap.set(
-	"n",
-	"<leader><leader>",
-	require("telescope.builtin").find_files,
-	{ desc = "Search files" }
-)
-vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Search help" })
-vim.keymap.set("n", "<leader>sk", require("telescope.builtin").keymaps, { desc = "Search keymap" })
-vim.keymap.set("n", "<leader>sf", function()
-	require("telescope.builtin").find_files({ hidden = true, no_ignore = true })
-end, { desc = "Search files (including hidden/ignored)" })
+vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Grep files" })
+vim.keymap.set("n", "<leader><leader>", require("fzf-lua").files, { desc = "Search files" })
+vim.keymap.set("n", "<leader>sh", require("fzf-lua").helptags, { desc = "Search help" })
+vim.keymap.set("n", "<leader>sk", require("fzf-lua").keymaps, { desc = "Search keymap" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Navigation
