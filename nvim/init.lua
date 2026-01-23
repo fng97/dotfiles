@@ -2,7 +2,6 @@
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-vim.o.laststatus = 0 -- remove status bar
 vim.o.background = "light" -- by default use light theme
 vim.cmd.colorscheme("vim") -- classic
 vim.opt.number = true -- enable line numbers
@@ -22,6 +21,10 @@ vim.opt.expandtab = true -- convert tabs to spaces
 vim.opt.smartindent = true -- automatically indent new lines
 vim.opt.autoindent = true -- copy indent from current line
 vim.opt.breakindent = true -- start with tab in case of line wrap
+
+-- Remove statusline background.
+vim.api.nvim_set_hl(0, "StatusLine", { bg = "NONE" })
+vim.api.nvim_set_hl(0, "StatusLineNC", { bg = "NONE" })
 
 -- PLUGINS
 
