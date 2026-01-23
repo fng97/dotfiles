@@ -92,10 +92,14 @@ vim.keymap.set("n", "<leader>tt", function()
 end, { desc = "Toggle background light/dark" })
 
 -- Search
-vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Grep files" })
-vim.keymap.set("n", "<leader><leader>", require("fzf-lua").files, { desc = "Search files" })
-vim.keymap.set("n", "<leader>sh", require("fzf-lua").helptags, { desc = "Search help" })
-vim.keymap.set("n", "<leader>sk", require("fzf-lua").keymaps, { desc = "Search keymap" })
+local fzf = require("fzf-lua")
+vim.keymap.set("n", "<leader>/", fzf.live_grep, { desc = "Grep files" })
+vim.keymap.set("n", "<leader><leader>", fzf.files, { desc = "Search files" })
+vim.keymap.set("n", "<leader>sf", function()
+	fzf.files({ fd_opts = "--type f --unrestricted --follow --exclude .git" })
+end, { desc = "Search all files" })
+vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "Search help" })
+vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "Search keymap" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
 
 -- Navigation
