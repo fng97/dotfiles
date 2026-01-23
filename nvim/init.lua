@@ -84,6 +84,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left (keep highlight)" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right (keep highlight)" })
+vim.keymap.set("n", "<leader>tt", function()
+	vim.o.background = (vim.o.background == "dark") and "light" or "dark"
+end, { desc = "Toggle background light/dark" })
 
 -- Search
 vim.keymap.set("n", "<leader>/", require("fzf-lua").live_grep, { desc = "Grep files" })
