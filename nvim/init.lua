@@ -99,6 +99,16 @@ vim.keymap.set("v", ">", ">gv", { desc = "Indent right (keep highlight)" })
 vim.keymap.set("n", "<leader>tt", function()
 	vim.o.background = (vim.o.background == "dark") and "light" or "dark"
 end, { desc = "Toggle background light/dark" })
+vim.keymap.set({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", {
+	desc = "Go down a line (works on wrapped lines)",
+	expr = true,
+	silent = true,
+})
+vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", {
+	desc = "Go up a line (works on wrapped lines)",
+	expr = true,
+	silent = true,
+})
 
 -- Search
 local fzf = require("fzf-lua")
