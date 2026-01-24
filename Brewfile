@@ -5,10 +5,11 @@ brew "lazygit"
 brew "git-crypt"
 brew "git-lfs"
 brew "llvm"
+tap "anyzig/tap"
+brew "anyzig"
 
 # Neovim
 brew "neovim", args: ["HEAD"]  # until 0.12 released
-brew "luarocks"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
