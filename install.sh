@@ -3,9 +3,7 @@
 set -euxo pipefail
 
 mkdir -p "$HOME/.config"/{fish,nvim,direnv,wezterm}
-mkdir -p "$HOME/.config/fish/functions"
 ln -sf "$PWD/fish/config.fish" "$HOME/.config/fish/config.fish"
-ln -sf "$PWD/fish/functions/fish_prompt.fish" "$HOME/.config/fish/functions/fish_prompt.fish"
 ln -sf "$PWD/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
 ln -sf "$PWD/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 ln -sf "$PWD/direnv/direnvrc" "$HOME/.config/direnv/direnvrc"
