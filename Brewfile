@@ -1,3 +1,4 @@
+brew "fish"
 brew "git"
 brew "direnv"
 brew "tlrc"
@@ -19,10 +20,9 @@ brew "jq"
 brew "ruff"
 
 if OS.mac?
-  brew "fish"
   cask "wezterm"
   cask "signal"
-  cask "firefox"
+  cask "librewolf"
   brew "go"
   go "tailscale.com/cmd/tailscale"
   go "tailscale.com/cmd/tailscaled"
