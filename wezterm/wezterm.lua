@@ -2,7 +2,7 @@ local w = require("wezterm")
 
 local config = w.config_builder()
 
-config.font = w.font("JetBrains Mono")
+config.font = w.font("JetBrains Mono", { weight = "Light" })
 config.font_size = 14
 config.window_decorations = "INTEGRATED_BUTTONS"
 
