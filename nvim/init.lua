@@ -44,6 +44,7 @@ require("nvim-treesitter.configs").setup({
 		additional_vim_regex_highlighting = false,
 	},
 })
+
 require("conform").setup({
 	format_on_save = { lsp_format = "never" },
 	formatters_by_ft = {
@@ -94,6 +95,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 -- KEY MAPPINGS
 
+-- Misc
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left (keep highlight)" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right (keep highlight)" })
 vim.keymap.set("n", "<leader>tt", function()
@@ -138,12 +140,6 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 vim.keymap.set("n", "<leader>e", ":Explore<CR>", { desc = "Open file explorer" })
-vim.keymap.set("n", "n", "nzz", { desc = "Next search result (centered)" })
-vim.keymap.set("n", "N", "Nzz", { desc = "Next search result (centered)" })
-vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Page up (centered)" })
-vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Page down (centered)" })
-vim.keymap.set("n", "<C-o>", "<C-o>zz", { desc = "Go to older cursor position (centered)" })
-vim.keymap.set("n", "<C-i>", "<C-i>zz", { desc = "Go to newer cursor position (centered)" })
 
 -- Window Management
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split horizontally", remap = true })
