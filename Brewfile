@@ -11,6 +11,7 @@ brew "anyzig"
 
 # Neovim
 brew "neovim", args: ["HEAD"]  # until 0.12 released
+brew "tree-sitter-cli"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
