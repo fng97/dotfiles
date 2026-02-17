@@ -9,12 +9,15 @@ brew "git-delta"
 tap "anyzig/tap"
 brew "anyzig"
 
-# Neovim
+# NEOVIM
 brew "neovim", args: ["HEAD"]  # until 0.12 released
 brew "tree-sitter-cli"
 brew "fd"
 brew "fzf"
 brew "ripgrep"
+# formatters
+brew "shfmt"
+brew "stylua"
 brew "clang-format"
 brew "nixfmt"
 brew "prettier"
