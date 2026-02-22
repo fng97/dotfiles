@@ -8,3 +8,9 @@
 
 - [1]: https://marler8997.github.io/anyzig/
 - [2]: https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md
+
+### TigerStyle Exceptions
+
+#### No Abreviations
+
+Accept `freq` because it aligns with `time`: `time_domain_power_sum`, `freq_domain_power_sum`.
