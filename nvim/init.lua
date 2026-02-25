@@ -133,6 +133,7 @@ end, { desc = "Search all files" })
 vim.keymap.set("n", "<leader>sh", fzf.helptags, { desc = "Search help" })
 vim.keymap.set("n", "<leader>sk", fzf.keymaps, { desc = "Search keymap" })
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlight" })
+vim.keymap.set("n", "<leader>sr", function() fzf.resume() end, { desc = "Resume search" })
 
 -- Navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
