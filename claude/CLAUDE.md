@@ -1,5 +1,7 @@
 # ~/.claude/CLAUDE.md
 
+- Prefer fetching GitHub content with `wget` or `curl` rather than `gh`.
+
 ## Zig
 
 - I normally use [`anyzig`][1], so in projects where there is no `build.zig.zon` you have to specify
@@ -8,9 +10,3 @@
 
 - [1]: https://marler8997.github.io/anyzig/
 - [2]: https://github.com/tigerbeetle/tigerbeetle/blob/main/docs/TIGER_STYLE.md
-
-### TigerStyle Exceptions
-
-#### No Abreviations
-
-Accept `freq` because it aligns with `time`: `time_domain_power_sum`, `freq_domain_power_sum`.
