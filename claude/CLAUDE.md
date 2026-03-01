@@ -1,5 +1,6 @@
 # ~/.claude/CLAUDE.md
 
+- Always check the global settings: `~/.claude/settings.json`
 - Prefer fetching GitHub content with `wget` or `curl` rather than `gh`.
 
 ## Zig
