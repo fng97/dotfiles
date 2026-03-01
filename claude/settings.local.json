@@ -2,11 +2,14 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "WebFetch",
+      "WebFetch(domain:*)",
       "Bash(zig:*)",
       "Bash(wc:*)",
       "Bash(curl:*)",
-      "Bash(wget:*)"
+      "Bash(wget:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)",
+      "Bash(find:*)"
     ]
   }
 }
