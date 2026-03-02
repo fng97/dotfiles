@@ -94,6 +94,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	end,
 	desc = "Enable spell check in Markdown",
 })
+vim.opt.spellfile = { vim.fn.stdpath("config") .. "/en.utf-8.add" } -- dictionary
 
 -- KEY MAPPINGS
 
