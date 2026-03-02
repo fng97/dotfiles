@@ -96,6 +96,15 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 vim.opt.spellfile = { vim.fn.stdpath("config") .. "/en.utf-8.add" } -- dictionary
 
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown", "gitcommit" },
+	callback = function()
+		vim.opt_local.formatoptions:append("q")
+		vim.opt_local.comments:append("n:>")
+	end,
+	desc = "Fix hard wrapping of quoted text (e.g. `gw`)",
+})
+
 -- KEY MAPPINGS
 
 -- Misc
