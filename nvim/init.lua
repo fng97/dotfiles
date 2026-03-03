@@ -121,6 +121,39 @@ vim.keymap.set({ "n", "x" }, "k", "v:count == 0 ? 'gk' : 'k'", {
 	silent = true,
 })
 
+-- Markdown Helpers
+-- Cycle between list item -> unchecked -> checked -> list item.
+local function cycle_checklist_line(line)
+	if line:match("%- %[x%]") then
+		return line:gsub("%- %[x%] ", "- ", 1)
+	elseif line:match("%- %[ %]") then
+		return line:gsub("%- %[ %]", "- [x]", 1)
+	elseif line:match("%- ") then
+		return line:gsub("(%s*)%- ", "%1- [ ] ", 1)
+	end
+	return line
+end
+
+-- Same as above but for multiple lines.
+local function cycle_range(start_row, end_row)
+	local lines = vim.api.nvim_buf_get_lines(0, start_row, end_row + 1, false)
+	for i, line in ipairs(lines) do
+		lines[i] = cycle_checklist_line(line)
+	end
+	vim.api.nvim_buf_set_lines(0, start_row, end_row + 1, false, lines)
+end
+
+vim.keymap.set("n", "<leader>tt", function()
+	local row = vim.fn.line(".") - 1
+	cycle_range(row, row)
+end, { desc = "Cycle checklist state on current line" })
+
+vim.keymap.set("v", "<leader>tt", function()
+	local start_row = math.min(vim.fn.line("."), vim.fn.line("v")) - 1
+	local end_row = math.max(vim.fn.line("."), vim.fn.line("v")) - 1
+	cycle_range(start_row, end_row)
+end, { desc = "Cycle checklist state on visually selected lines" })
+
 -- Search
 local fzf = require("fzf-lua")
 vim.keymap.set("n", "<leader>/", fzf.live_grep, { desc = "Grep files" })
