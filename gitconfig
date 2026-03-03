@@ -42,6 +42,7 @@
 
 [merge]
   conflictstyle = zdiff3
+	tool = nvimdiff
 
 [commit]
   verbose = true
