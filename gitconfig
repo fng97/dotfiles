@@ -52,7 +52,7 @@
   updateRefs = true
 
 [rerere]
-  enabled = true
+	enabled = true
   autoupdate = true
 
 [filter "lfs"]
@@ -60,3 +60,5 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[mergetool]
+	keepBackup = false
