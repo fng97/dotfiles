@@ -26,6 +26,7 @@ if OS.mac?
   cask "wezterm"
   cask "signal"
   cask "librewolf"
+  cask "spotify"
   brew "go"
   go "tailscale.com/cmd/tailscale"
   go "tailscale.com/cmd/tailscaled"
