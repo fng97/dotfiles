@@ -91,6 +91,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.opt_local.spell = true
 		vim.opt_local.spelllang = "en_gb"
+		vim.opt_local.textwidth = 80
 	end,
 	desc = "Enable spell check in Markdown",
 })
