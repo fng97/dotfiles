@@ -27,6 +27,7 @@ if OS.mac?
   cask "signal"
   cask "spotify"
   brew "yt-dlp"
+  brew "mpv"
   brew "go"
   go "tailscale.com/cmd/tailscale"
   go "tailscale.com/cmd/tailscaled"
