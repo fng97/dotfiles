@@ -1,8 +1,9 @@
-https://blog.jsbarretto.com/rss.xml
+# Blogs
 https://alexyang.dev/feed.xml
 https://andrewkelley.me/rss.xml
 https://apenwarr.ca/log/rss.php
 https://ashvardanian.com/index.xml
+https://blog.jsbarretto.com/rss.xml
 https://fabiensanglard.net/rss.xml
 https://hypodyne.net/atom.xml
 https://kprotty.me/feed.xml
@@ -11,6 +12,23 @@ https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
 https://scattered-thoughts.net/atom.xml
 https://seiya.me/atom.xml
+https://tailscale.com/blog/index.xml
 https://tigerbeetle.com/blog/atom.xml
+https://www.jeffgeerling.com/blog.xml
 https://ziglang.org/devlog/index.xml
 https://ziglang.org/news/index.xml
+
+# YouTube
+https://www.youtube.com/feeds/videos.xml?channel_id=UC6uX6GF5q2JxLjMkyivM2Og # Nathan Florence
+https://www.youtube.com/feeds/videos.xml?channel_id=UCFn4S3OexFT9YhxJ8GWdUYQ # Oxide Computer Company
+https://www.youtube.com/feeds/videos.xml?channel_id=UCJZL3rpGw49x_GNylID9hzg # LogRap
+https://www.youtube.com/feeds/videos.xml?channel_id=UCMb0O2CdPBNi-QqPk5T3gsQ # James Hoffmann
+https://www.youtube.com/feeds/videos.xml?channel_id=UCQG40havu4kNpB4pxUDQhYQ # Acerola
+https://www.youtube.com/feeds/videos.xml?channel_id=UCR1uNZFzyXOuty6FK8hXGxQ # Recurse Center
+https://www.youtube.com/feeds/videos.xml?channel_id=UCRYOj4DmyxhBVrdvbsUwmAA # Optimum
+https://www.youtube.com/feeds/videos.xml?channel_id=UCS0N5baNlQWJCUrhCEo8WlA # Ben Eater
+https://www.youtube.com/feeds/videos.xml?channel_id=UCYO_jab_esuFRV4b17AJtAw # 3Blue1Brown
+https://www.youtube.com/feeds/videos.xml?channel_id=UCcQWoBTNG__OwfZk9znWgCQ # The Rusty Bits
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsG5dkqFUHZO6eY9uOzQqow # Stab Magazine
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q # Kurzgesagt
+https://www.youtube.com/feeds/videos.xml?channel_id=UCz4hzKOYqRA9tBrvbw_fQjg # Antithesis
