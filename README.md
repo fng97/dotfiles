@@ -2,18 +2,24 @@
 
 Install dotfiles:
 
-```bash
-./install.sh
+```
+$ ./install.sh
 ```
 
 Install Brewfile packages:
 
-```bash
-brew bundle
+```
+$ brew bundle
 ```
 
 Uninstall packages not listed in Brewfile:
 
-```bash
-brew bundle cleanup --force
+```
+$ brew bundle cleanup --force
+```
+
+Browse feeds (articles/videos):
+
+```
+$ feeds
 ```
