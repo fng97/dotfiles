@@ -93,7 +93,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.spelllang = "en_gb"
 		vim.opt_local.textwidth = 80
 	end,
-	desc = "Enable spell check in Markdown",
 })
 
 vim.api.nvim_create_autocmd("FileType", {
@@ -103,6 +102,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		vim.opt_local.comments:append("n:>")
 	end,
 	desc = "Fix hard wrapping of quoted text (e.g. `gw`)",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.opt_local.textwidth = 88
+	end,
 })
 
 -- KEY MAPPINGS
