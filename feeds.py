@@ -52,12 +52,13 @@ def fetch_feed(url, cutoff):
 
     # extract entries — try RSS first, then Atom
     entries = []
+    chan_author = (root.findtext(".//channel/title") or "").strip()
     for item in root.iter("item"):
         title = (item.findtext("title") or "").strip()
         author = (
             item.findtext("author")
             or item.findtext("{http://purl.org/dc/elements/1.1/}creator")
-            or ""
+            or chan_author
         ).strip()
         if author:
             title = f"[{author}] {title}"
@@ -68,7 +69,11 @@ def fetch_feed(url, cutoff):
 
     if not entries:
         ATOM = "{http://www.w3.org/2005/Atom}"
-        feed_author = (root.findtext(f"{ATOM}author/{ATOM}name") or "").strip()
+        feed_author = (
+            root.findtext(f"{ATOM}author/{ATOM}name")
+            or root.findtext(f"{ATOM}title")
+            or ""
+        ).strip()
         for entry in root.iter(f"{ATOM}entry"):
             title = (entry.findtext(f"{ATOM}title") or "").strip()
             author = (entry.findtext(f"{ATOM}author/{ATOM}name") or feed_author).strip()
