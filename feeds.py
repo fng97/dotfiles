@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, subprocess, xml.etree.ElementTree as ET
+import sys, subprocess, webbrowser, xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.error import URLError
@@ -124,4 +124,4 @@ while True:
     if "youtube.com/" in url:
         subprocess.run(["mpv", url])
     else:
-        subprocess.run(["open", url])
+        webbrowser.open(url)
