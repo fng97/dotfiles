@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, argparse, subprocess, tempfile, xml.etree.ElementTree as ET
+import sys, argparse, subprocess, xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.error import URLError
@@ -31,14 +31,11 @@ urls = [
 ]
 
 
-def _fetch(url):
-    with urlopen(Request(url, headers={"User-Agent": "feeds.py/1.0"}), timeout=3) as r:
-        return r.read()
-
-
 def fetch_feed(url, cutoff):
     try:
-        raw = _fetch(url)
+        request = Request(url, headers={"User-Agent": "feeds.py/1.0"})
+        with urlopen(request, timeout=3) as r:
+            raw = r.read()
     except (URLError, OSError) as e:
         print(f"! fetch failed: {url} ({e})", file=sys.stderr)
         return []
@@ -127,52 +124,20 @@ lines = [
     f"{date:%Y-%m-%d} {'▶' if 'youtube.com/' in url else ' '} {title}\t{url}"
     for date, title, url in all_entries
 ]
-result = subprocess.run(
-    ["fzf", "--with-nth=1", "--delimiter=\t", "--no-multi"],
-    input="\n".join(lines),
-    capture_output=True,
-    text=True,
-)
-if result.returncode != 0:
-    sys.exit(0)
-url = result.stdout.strip().split("\t")[-1]
-title = result.stdout.strip().split("\t")[0].split("  ", 1)[-1]
 
-if "youtube.com/" in url:
-    dest = f"{Path.home() / 'Downloads'}/%(title)s.%(ext)s"
-    probe = subprocess.run(
-        ["yt-dlp", "-o", dest, "--print", "filename", "--no-download", url],
+while True:
+    result = subprocess.run(
+        ["fzf", "--with-nth=1", "--delimiter=\t", "--no-multi"],
+        input="\n".join(lines),
         capture_output=True,
         text=True,
     )
-    filepath = (
-        probe.stdout.strip().splitlines()[-1] if probe.returncode == 0 else ""
-    )
-    if filepath and Path(filepath).exists():
-        print(f"\nAlready downloaded: {title}\n")
+    if result.returncode != 0:
+        break
+    url = result.stdout.strip().split("\t")[-1]
+    title = result.stdout.strip().split("\t")[0].split("  ", 1)[-1]
+
+    if "youtube.com/" in url:
+        subprocess.run(["mpv", url])
     else:
-        print(f"\nDownloading: {title}\n")
-        with tempfile.NamedTemporaryFile(
-            mode="r", suffix=".txt", delete=False
-        ) as f:
-            fpathfile = f.name
-        dl = subprocess.run(
-            [
-                "yt-dlp",
-                "-o",
-                dest,
-                "--print-to-file",
-                "after_move:filepath",
-                fpathfile,
-                url,
-            ],
-        )
-        if dl.returncode == 0:
-            filepath = Path(fpathfile).read_text().strip().splitlines()[-1]
-        Path(fpathfile).unlink(missing_ok=True)
-    if filepath and Path(filepath).exists():
-        subprocess.run(
-            ["mpv", filepath], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-        )
-else:
-    subprocess.run(["open", url])
+        subprocess.run(["open", url])
