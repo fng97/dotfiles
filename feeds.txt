@@ -8,6 +8,7 @@ https://fabiensanglard.net/rss.xml
 https://hypodyne.net/atom.xml
 https://kprotty.me/feed.xml
 https://kristoff.it/index.xml
+https://lalitm.com/index.xml
 https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
 https://scattered-thoughts.net/atom.xml
@@ -32,3 +33,4 @@ https://www.youtube.com/feeds/videos.xml?channel_id=UCcQWoBTNG__OwfZk9znWgCQ # T
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsG5dkqFUHZO6eY9uOzQqow # Stab Magazine
 https://www.youtube.com/feeds/videos.xml?channel_id=UCsXVk37bltHxD1rDPwtNM8Q # Kurzgesagt
 https://www.youtube.com/feeds/videos.xml?channel_id=UCz4hzKOYqRA9tBrvbw_fQjg # Antithesis
+https://www.youtube.com/feeds/videos.xml?channel_id=UC_gSotrFVZ_PiAxo3fTQVuQ # Magnus Midtbø
