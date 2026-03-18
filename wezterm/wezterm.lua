@@ -3,7 +3,7 @@ local w = require("wezterm")
 local config = w.config_builder()
 
 config.font = w.font("JetBrains Mono", { weight = "Light" })
-config.font_size = 14
+config.font_size = 18
 config.window_decorations = "INTEGRATED_BUTTONS"
 
 -- Switch between light and dark themes based on system theme. Colours taken from
@@ -80,6 +80,7 @@ if w.target_triple == "x86_64-pc-windows-msvc" and w.running_under_wsl then
 		},
 	}
 	config.default_domain = "WSL:Debian"
+	config.font_size = 14
 end
 
 config.keys = {
