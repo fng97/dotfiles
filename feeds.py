@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, subprocess, webbrowser, xml.etree.ElementTree as ET
+import platform, sys, subprocess, webbrowser, xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
 from urllib.request import Request, urlopen
 from urllib.error import URLError
@@ -122,6 +122,6 @@ while True:
         break
     url = result.stdout.strip().split("\t")[-1]
     if "youtube.com/" in url:
-        subprocess.run(["mpv", url])
+        subprocess.run(["mpv.exe" if "WSL2" in platform.release() else "mpv", url])
     else:
         webbrowser.open(url)
