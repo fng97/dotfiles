@@ -6,6 +6,7 @@ brew "lazygit"
 brew "git-delta"
 brew "mpv"
 brew "fzf"
+cask "claude-code"
 tap "anyzig/tap"
 brew "anyzig"
 
