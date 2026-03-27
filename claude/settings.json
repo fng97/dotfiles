@@ -11,5 +11,6 @@
       "Bash(ls:*)",
       "Bash(find:*)"
     ]
-  }
+  },
+  "model": "opus"
 }

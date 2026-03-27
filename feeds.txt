@@ -9,6 +9,7 @@ https://hypodyne.net/atom.xml
 https://kprotty.me/feed.xml
 https://kristoff.it/index.xml
 https://lalitm.com/index.xml
+https://marler8997.github.io/blog/index.xml
 https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
 https://scattered-thoughts.net/atom.xml
