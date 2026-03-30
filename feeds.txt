@@ -12,9 +12,9 @@ https://lalitm.com/index.xml
 https://marler8997.github.io/blog/index.xml
 https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
+https://renerocks.ai/blog/index.xml
 https://scattered-thoughts.net/atom.xml
 https://seiya.me/atom.xml
-https://tailscale.com/blog/index.xml
 https://tigerbeetle.com/blog/atom.xml
 https://www.jeffgeerling.com/blog.xml
 https://ziglang.org/devlog/index.xml
