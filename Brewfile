@@ -20,10 +20,7 @@ brew "tree-sitter-cli"
 cask "claude-code"
 
 if OS.mac?
-  brew "go"
   cask "signal"
   cask "spotify"
   cask "wezterm"
-  go "tailscale.com/cmd/tailscale"
-  go "tailscale.com/cmd/tailscaled"
 end
