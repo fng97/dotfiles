@@ -153,6 +153,50 @@ vim.keymap.set("n", "<leader>sr", function()
 	fzf.resume()
 end, { desc = "Resume search" })
 
+-- Grep-based go-to-definition. What I grep for depends on the language. I also add search paths
+-- depending on language. E.g. for Zig I add the standard library path and dependency source paths.
+vim.keymap.set("n", "<leader>gd", function()
+	local def_patterns = {
+		zig = { "const %s =", "fn %s" },
+		python = { "def %s", "class %s" },
+		cpp = { "class %s", "struct %s ", "enum %s", "%s\\(" },
+	}
+	local extra_paths = {
+		zig = function()
+			local handle = io.popen("zig env 2>/dev/null")
+			if not handle then
+				return {}
+			end
+			local output = handle:read("*a")
+			handle:close()
+			local paths = {}
+			local std_dir = output:match('%.std_dir%s*=%s*"([^"]+)"')
+			if std_dir then
+				table.insert(paths, std_dir)
+			end
+			-- zig-pkg/ holds local deps since 2026-02-06
+			local pkg_dir = vim.fn.getcwd() .. "/zig-pkg"
+			if vim.fn.isdirectory(pkg_dir) == 1 then
+				table.insert(paths, pkg_dir)
+			end
+			return paths
+		end,
+	}
+	local word = vim.fn.expand("<cword>")
+	local ft = vim.bo.filetype
+	local patterns = def_patterns[ft]
+	if not patterns then
+		fzf.live_grep({ search = word })
+		return
+	end
+	local rg_patterns = vim.tbl_map(function(pat)
+		return pat:format(word)
+	end, patterns)
+	local path_fn = extra_paths[ft]
+	local search_paths = vim.list_extend({ "." }, path_fn and path_fn() or {})
+	fzf.grep({ search = table.concat(rg_patterns, "|"), no_esc = true, search_paths = search_paths })
+end, { desc = "Go to definition (grep-based)" })
+
 -- Navigation
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })
