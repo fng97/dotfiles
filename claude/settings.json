@@ -1,16 +1,17 @@
 {
-  "permissions": {
-    "allow": [
-      "WebSearch",
-      "WebFetch(domain:*)",
-      "Bash(zig:*)",
-      "Bash(wc:*)",
-      "Bash(curl:*)",
-      "Bash(wget:*)",
-      "Bash(cat:*)",
-      "Bash(ls:*)",
-      "Bash(find:*)"
-    ]
-  },
-  "model": "opus"
+    "permissions": {
+        "allow": [
+            "WebSearch",
+            "WebFetch(domain:*)",
+            "Bash(zig:*)",
+            "Bash(wc:*)",
+            "Bash(curl:*)",
+            "Bash(wget:*)",
+            "Bash(cat:*)",
+            "Bash(ls:*)",
+            "Bash(find:*)"
+        ]
+    },
+    "model": "opus",
+    "effortLevel": "high"
 }
