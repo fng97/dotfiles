@@ -6,6 +6,7 @@ https://ashvardanian.com/index.xml
 https://blog.jsbarretto.com/rss.xml
 https://fabiensanglard.net/rss.xml
 https://hypodyne.net/atom.xml
+https://joshuao.com/index.xml
 https://kprotty.me/feed.xml
 https://kristoff.it/index.xml
 https://lalitm.com/index.xml
