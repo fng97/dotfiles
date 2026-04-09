@@ -6,6 +6,7 @@
       "Bash(zig:*)",
       "Bash(wc:*)",
       "Bash(curl:*)",
+      "Bash(grep:*)",
       "Bash(wget:*)",
       "Bash(cat:*)",
       "Bash(ls:*)",
