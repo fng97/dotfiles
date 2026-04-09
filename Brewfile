@@ -8,7 +8,7 @@ brew "git-delta"
 brew "jq"
 brew "lazygit"
 brew "mpv"
-brew "neovim", args: ["HEAD"]  # until 0.12 released
+brew "neovim"
 brew "nixfmt"
 brew "prettier"
 brew "ripgrep"
