@@ -3,7 +3,9 @@ https://alexyang.dev/feed.xml
 https://andrewkelley.me/rss.xml
 https://apenwarr.ca/log/rss.php
 https://ashvardanian.com/index.xml
+https://bcantrill.dtrace.org/index.xml
 https://blog.jsbarretto.com/rss.xml
+https://brooker.co.za/blog/rss.xml
 https://drewdevault.com/blog/index.xml
 https://fabiensanglard.net/rss.xml
 https://hypodyne.net/atom.xml
@@ -13,6 +15,7 @@ https://kristoff.it/index.xml
 https://lalitm.com/index.xml
 https://marler8997.github.io/blog/index.xml
 https://matklad.github.io/feed.xml
+https://blog.jessfraz.com/index.xml
 https://mitchellh.com/feed.xml
 https://renerocks.ai/blog/index.xml
 https://scattered-thoughts.net/atom.xml
