@@ -17,7 +17,6 @@ brew "shfmt"
 brew "stylua"
 brew "tlrc"
 brew "tree-sitter-cli"
-cask "claude-code"
 
 if OS.mac?
   cask "signal"
