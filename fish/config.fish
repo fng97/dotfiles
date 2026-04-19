@@ -4,6 +4,7 @@ set --export EDITOR nvim
 set --export VISUAL nvim
 set --export BROWSER open
 set --export HOMEBREW_NO_ANALYTICS 1
+set --export HOMEBREW_NO_ENV_HINTS 1
 
 export PATH="$HOME/.local/bin:$PATH"
 
