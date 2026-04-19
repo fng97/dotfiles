@@ -9,6 +9,14 @@
   editor = nvim
   excludesfile = ~/.gitignore
   untrackedCache = true
+  # To bypass delta (e.g. when producing a patch), use `git --no-pager diff` or `git -c core.pager=cat diff`.
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only
+
+[delta]
+  navigate = true
 
 [color]
   ui = auto
