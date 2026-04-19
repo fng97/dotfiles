@@ -17,6 +17,8 @@ brew "shfmt"
 brew "stylua"
 brew "tlrc"
 brew "tree-sitter-cli"
+tap "anyzig/tap"
+brew "anyzig"
 
 if OS.mac?
   cask "signal"
