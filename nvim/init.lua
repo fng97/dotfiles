@@ -143,6 +143,7 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highl
 vim.keymap.set("n", "<leader>sr", function()
 	fzf.resume()
 end, { desc = "Resume search" })
+vim.keymap.set("n", "<leader>'", fzf.marks, { desc = "Search marks" })
 
 -- Grep-based go-to-definition. What I grep for depends on the language. I also add search paths
 -- depending on language. E.g. for Zig I add the standard library path and dependency source paths.
