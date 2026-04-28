@@ -23,14 +23,14 @@ vim.opt.breakindent = true -- start with tab in case of line wrap
 
 -- PLUGINS
 
--- NB: Pinning version with `vim.pack` wasn't working for me. It kept checking out the default
--- branch. Just forked everything as a quick fix.
+-- NB: Forks let us control the default branch. `vim.pack`'s `version` only accepts branch names or
+-- semver ranges (not commits).
 vim.pack.add({
-	"https://github.com/fng97/conform.nvim", -- auto-formatting
-	"https://github.com/fng97/fzf-lua", -- fuzzy fd/ripgrep
-	"https://github.com/fng97/vscode.nvim", -- theme
-	"https://github.com/fng97/auto-dark-mode.nvim", -- auto light/dark theme
-	"https://github.com/fng97/nvim-treesitter", -- auto-installing treesitter parsers
+	{ src = "https://github.com/fng97/conform.nvim", version = "master" },
+	{ src = "https://github.com/fng97/fzf-lua", version = "main" },
+	{ src = "https://github.com/fng97/vscode.nvim", version = "main" },
+	{ src = "https://github.com/fng97/auto-dark-mode.nvim", version = "master" },
+	{ src = "https://github.com/fng97/nvim-treesitter", version = "main" },
 })
 
 vim.o.background = "light"
@@ -38,8 +38,6 @@ require("vscode").setup({})
 vim.cmd.colorscheme("vscode")
 
 require("auto-dark-mode").setup({ fallback = "light" })
-
-require("fzf-lua").setup({})
 
 require("nvim-treesitter").install({
 	"bash",
