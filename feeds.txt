@@ -23,6 +23,7 @@ https://renerocks.ai/blog/index.xml
 https://scattered-thoughts.net/atom.xml
 https://seiya.me/atom.xml
 https://tigerbeetle.com/blog/atom.xml
+https://www.hmpcabral.com/atom.xml
 https://www.jeffgeerling.com/blog.xml
 https://www.seangoedecke.com/rss.xml
 https://ziglang.org/devlog/index.xml
