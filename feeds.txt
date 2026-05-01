@@ -4,6 +4,7 @@ https://andrewkelley.me/rss.xml
 https://apenwarr.ca/log/rss.php
 https://ashvardanian.com/index.xml
 https://bcantrill.dtrace.org/index.xml
+https://blog.janestreet.com/feed.xml
 https://blog.jessfraz.com/index.xml
 https://blog.jsbarretto.com/rss.xml
 https://brooker.co.za/blog/rss.xml
