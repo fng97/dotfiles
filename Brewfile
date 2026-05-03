@@ -1,8 +1,12 @@
+tap "anyzig/tap"
+
+brew "anyzig"
 brew "clang-format"
 brew "direnv"
 brew "fd"
 brew "fish"
 brew "fzf"
+brew "ghostty"
 brew "git"
 brew "git-delta"
 brew "jq"
@@ -17,8 +21,6 @@ brew "shfmt"
 brew "stylua"
 brew "tlrc"
 brew "tree-sitter-cli"
-tap "anyzig/tap"
-brew "anyzig"
 
 if OS.mac?
   cask "signal"
