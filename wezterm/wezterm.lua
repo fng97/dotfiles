@@ -5,6 +5,7 @@ local config = w.config_builder()
 config.font = w.font("JetBrains Mono")
 config.font_size = 18
 config.window_decorations = "INTEGRATED_BUTTONS"
+config.enable_kitty_keyboard = true
 
 -- Switch between light and dark themes based on system theme. Colours taken from
 -- https://github.com/Mofiqul/vscode.nvim
