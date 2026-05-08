@@ -1,5 +1,5 @@
 font-family = JetBrains Mono
-font-size = 24
+font-size = 16
 theme = light:vscode-light,dark:vscode-dark
-window-padding-x = 12
-window-padding-y = 6
+window-padding-x = 16
+window-padding-y = 8
