@@ -26,6 +26,7 @@ https://seiya.me/atom.xml
 https://tigerbeetle.com/blog/atom.xml
 https://www.hmpcabral.com/atom.xml
 https://www.jeffgeerling.com/blog.xml
+https://xania.org/feed
 https://ziglang.org/devlog/index.xml
 https://ziglang.org/news/index.xml
 
