@@ -18,6 +18,10 @@ if uname -r | grep --quiet WSL2
   set --export BROWSER explorer.exe
 end
 
+function fish_user_key_bindings
+    bind ctrl-g edit_command_buffer
+end
+
 direnv hook fish | source
 
 # Set Astronaught prompt.
