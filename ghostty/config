@@ -3,3 +3,4 @@ font-size = 16
 theme = light:vscode-light,dark:vscode-dark
 window-padding-x = 16
 window-padding-y = 8
+copy-on-select = clipboard
