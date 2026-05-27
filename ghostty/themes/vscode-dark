@@ -1,8 +1,6 @@
 # Colors from https://github.com/Mofiqul/vscode.nvim
 background = #1f1f1f
 foreground = #d4d4d4
-cursor-color = #d4d4d4
-cursor-text = #1f1f1f
 selection-background = #dcdcaa
 selection-foreground = #1f1f1f
 
