@@ -7,6 +7,7 @@ https://bcantrill.dtrace.org/index.xml
 https://blog.janestreet.com/feed.xml
 https://blog.jessfraz.com/index.xml
 https://blog.jsbarretto.com/rss.xml
+https://blog.tjll.net/feed.xml
 https://brooker.co.za/blog/rss.xml
 https://drewdevault.com/blog/index.xml
 https://eieio.games/feed.xml
