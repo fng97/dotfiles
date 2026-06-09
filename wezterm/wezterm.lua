@@ -72,7 +72,7 @@ else
 end
 
 -- On Windows, use NixOS-WSL
-if w.target_triple == "x86_64-pc-windows-msvc" and w.running_under_wsl then
+if w.target_triple == "x86_64-pc-windows-msvc" and w.running_under_wsl() then
 	config.wsl_domains = {
 		{
 			name = "WSL:Debian",
@@ -82,6 +82,7 @@ if w.target_triple == "x86_64-pc-windows-msvc" and w.running_under_wsl then
 	}
 	config.default_domain = "WSL:Debian"
 	config.font_size = 14
+	config.allow_win32_input_mode = false
 end
 
 config.keys = {
