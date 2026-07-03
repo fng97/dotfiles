@@ -1,5 +1,4 @@
-font-family = JetBrains Mono
-font-size = 16
+font-size = 14
 theme = light:vscode-light,dark:vscode-dark
 cursor-invert-fg-bg = true
 window-padding-x = 16

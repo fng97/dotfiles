@@ -24,6 +24,4 @@ brew "tree-sitter-cli"
 if OS.mac?
   cask "ghostty"
   cask "signal"
-  cask "spotify"
-  cask "wezterm"
 end
