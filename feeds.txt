@@ -16,6 +16,7 @@ https://floooh.github.io/feed.xml
 https://hypodyne.net/atom.xml
 https://increment.com/feed.xml
 https://joshuao.com/index.xml
+https://journal.stuffwithstuff.com/rss.xml
 https://kprotty.me/feed.xml
 https://kristoff.it/index.xml
 https://lalitm.com/index.xml
