@@ -12,6 +12,7 @@ https://brooker.co.za/blog/rss.xml
 https://drewdevault.com/blog/index.xml
 https://eieio.games/feed.xml
 https://fabiensanglard.net/rss.xml
+https://floooh.github.io/feed.xml
 https://hypodyne.net/atom.xml
 https://increment.com/feed.xml
 https://joshuao.com/index.xml
