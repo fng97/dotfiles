@@ -20,8 +20,3 @@ brew "shfmt"
 brew "stylua"
 brew "tlrc"
 brew "tree-sitter-cli"
-
-if OS.mac?
-  cask "ghostty"
-  cask "signal"
-end
