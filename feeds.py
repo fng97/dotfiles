@@ -122,6 +122,6 @@ while True:
         break
     url = result.stdout.strip().split("\t")[-1]
     if "youtube.com/" in url:
-        subprocess.run(["mpv.exe" if "WSL2" in platform.release() else "mpv", url])
+        subprocess.run(["mpv", url])
     else:
         webbrowser.open(url)
