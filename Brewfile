@@ -1,6 +1,3 @@
-tap "anyzig/tap"
-
-brew "anyzig"
 brew "clang-format"
 brew "direnv"
 brew "fd"
