@@ -23,6 +23,7 @@ https://lalitm.com/index.xml
 https://marler8997.github.io/blog/index.xml
 https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
+https://mlugg.co.uk/posts/index.xml
 https://renerocks.ai/blog/index.xml
 https://scattered-thoughts.net/atom.xml
 https://seiya.me/atom.xml
