@@ -1,6 +1,10 @@
-font-size = 14
+font-size = 13
 theme = light:vscode-light,dark:vscode-dark
 cursor-invert-fg-bg = true
 window-padding-x = 16
 window-padding-y = 8
 copy-on-select = clipboard
+keybind = alt+shift+[=previous_tab
+keybind = alt+shift+]=next_tab
+keybind = alt+[=goto_split:previous
+keybind = alt+]=goto_split:next
