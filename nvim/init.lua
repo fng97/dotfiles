@@ -47,6 +47,7 @@ require("nvim-treesitter").install({
 	"gitcommit",
 	"json",
 	"lua",
+	"ledger",
 	"markdown",
 	"markdown_inline",
 	"nix",
@@ -64,6 +65,11 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("conform").setup({
 	format_on_save = { lsp_format = "never" },
+	formatters = {
+		["hledger-fmt"] = {
+			args = { "-", "--no-diff", "--exit-zero-on-changes" },
+		},
+	},
 	formatters_by_ft = {
 		_ = { "trim_whitespace", "trim_newlines" },
 		c = { "clang-format" },
@@ -80,6 +86,7 @@ require("conform").setup({
 		json = { "jq" },
 		html = { "prettier" },
 		css = { "prettier" },
+		ledger = { "hledger-fmt" },
 	},
 })
 
