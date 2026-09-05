@@ -20,6 +20,11 @@ end
 
 direnv hook fish | source
 
+alias e='~/.local/bin/edit'
+alias eg='~/.local/bin/edit_fzf_grep'
+alias ef='~/.local/bin/edit_fzf_file'
+alias efa='~/.local/bin/edit_fzf_file --all'
+
 # Set Astronaught prompt.
 function fish_prompt --description 'Write out the prompt'
         set -l last_status $status
