@@ -1,3 +1,4 @@
+brew "bat"
 brew "clang-format"
 brew "direnv"
 brew "fd"
