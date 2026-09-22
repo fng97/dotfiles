@@ -9,6 +9,7 @@ https://blog.jessfraz.com/index.xml
 https://blog.jsbarretto.com/rss.xml
 https://blog.tjll.net/feed.xml
 https://brooker.co.za/blog/rss.xml
+https://david.alvarezrosa.com/index.xml
 https://drewdevault.com/blog/index.xml
 https://eieio.games/feed.xml
 https://ente.com/blog/rss.xml
