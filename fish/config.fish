@@ -1,7 +1,7 @@
 set fish_greeting
 
-set --export EDITOR nvim
-set --export VISUAL nvim
+set --export EDITOR edit
+set --export VISUAL edit
 set --export HOMEBREW_NO_ANALYTICS 1
 set --export HOMEBREW_NO_ENV_HINTS 1
 

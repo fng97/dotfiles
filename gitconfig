@@ -6,7 +6,7 @@
   defaultBranch = main
 
 [core]
-  editor = nvim
+  editor = edit
   excludesfile = ~/.gitignore
   untrackedCache = true
   # To bypass delta (e.g. when producing a patch), use `git --no-pager diff` or `git -c core.pager=cat diff`.
@@ -50,7 +50,6 @@
 
 [merge]
   conflictstyle = zdiff3
-	tool = nvimdiff
 
 [commit]
   verbose = true
@@ -60,7 +59,7 @@
   updateRefs = true
 
 [rerere]
-	enabled = true
+  enabled = true
   autoupdate = true
 
 [filter "lfs"]
@@ -68,5 +67,6 @@
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+
 [mergetool]
-	keepBackup = false
+  keepBackup = false
