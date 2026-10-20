@@ -12,4 +12,4 @@ file=$("${files[@]}" | fzf \
     --preview 'bat --color=always --theme=ansi --style=numbers {}' \
     --preview-window 'right,60%')
 
-[[ -n "$file" ]] && edit "$file"
+[[ -n "$file" ]] && "$EDITOR" "$file"
