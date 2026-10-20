@@ -1,5 +1,5 @@
-font-size = 13
-theme = light:vscode-light,dark:vscode-dark
+font-size = 16
+theme = light:Xcode Light,dark:Xcode Dark
 cursor-invert-fg-bg = true
 window-padding-x = 16
 window-padding-y = 8
