@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
 
-import platform, sys, subprocess, webbrowser, xml.etree.ElementTree as ET
+import subprocess
+import sys
+import webbrowser
+import xml.etree.ElementTree as ET
 from concurrent.futures import ThreadPoolExecutor
-from urllib.request import Request, urlopen
-from urllib.error import URLError
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
+from urllib.error import URLError
+from urllib.request import Request, urlopen
 
 ATOM = "{http://www.w3.org/2005/Atom}"
 
@@ -24,14 +27,22 @@ urls = [
 
 
 def parse_date(raw):
-    for parser in (parsedate_to_datetime, datetime.fromisoformat):
-        try:
-            dt = parser(raw)
-            return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
-        except Exception:
-            continue
+    raw = raw.strip()
+    
+    try:
+        dt = parsedate_to_datetime(raw)
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except TypeError:
+        pass
+        
+    normalized = raw.replace('Z', '+00:00')
+    try:
+        dt = datetime.fromisoformat(normalized)
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except TypeError:
+        pass
+        
     return None
-
 
 def fetch_feed(url):
     try:
@@ -107,7 +118,7 @@ all_entries.sort(key=lambda e: e[0], reverse=True)
 # Prepare list of feed items for selection in fzf, then open the item. Keep the feed
 # open: prompt again for selection in fzf after opening item.
 lines = [
-    f"{date:%Y-%m-%d} {'▶' if 'youtube.com/' in url else ' '} {title}\t{url}"
+    f"{date:%Y-%m-%d} {title}\t{url}"
     for date, title, url in all_entries
 ]
 while True:
@@ -116,12 +127,10 @@ while True:
         input="\n".join(lines),
         capture_output=True,
         text=True,
+        check=False,
     )
     # If we exit fzf, exit this script.
     if result.returncode != 0:
         break
     url = result.stdout.strip().split("\t")[-1]
-    if "youtube.com/" in url:
-        subprocess.run(["mpv", url])
-    else:
-        webbrowser.open(url)
+    webbrowser.open(url)
