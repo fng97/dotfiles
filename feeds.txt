@@ -11,7 +11,6 @@ https://brooker.co.za/blog/rss.xml
 https://david.alvarezrosa.com/index.xml
 https://drewdevault.com/blog/index.xml
 https://eieio.games/feed.xml
-https://ente.com/blog/rss.xml
 https://fabiensanglard.net/rss.xml
 https://floooh.github.io/feed.xml
 https://hypodyne.net/atom.xml
