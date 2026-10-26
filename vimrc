@@ -7,8 +7,8 @@ set confirm               " Confirm unsaved changes before exiting
 set ignorecase            " Ignore case when searching...
 set smartcase             " ...unless uppercase is used in search
 set textwidth=100         " Break lines at 100 characters
-set laststatus=2          " Use status line
-set statusline=%f\ %l\ %o " Show filename, line number, and line column
+set laststatus=2          " Always show status line
+set ruler                 " Show line row/col
 set tabstop=4             " Spaces to display for tab character
 set softtabstop=4         " Spaces inserted when tab pressed
 set shiftwidth=4          " Spaces to use for indentation
