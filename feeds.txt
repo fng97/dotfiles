@@ -22,6 +22,7 @@ https://kapteko.com/rss.xml
 https://kprotty.me/feed.xml
 https://kristoff.it/index.xml
 https://lalitm.com/index.xml
+https://linus.dev/feed.xml
 https://marler8997.github.io/blog/index.xml
 https://matklad.github.io/feed.xml
 https://mitchellh.com/feed.xml
